@@ -4,11 +4,11 @@ Site statique (HTML, CSS, JavaScript), sans dépendance ni étape de build : rap
 
 ## Arborescence
 ```
-portfolio/
+v2/
 ├── index.html        # Toutes les sections + SEO (meta, Open Graph, JSON-LD)
 ├── css/style.css     # Design (palette en variables CSS en haut du fichier)
 ├── js/main.js        # Sélecteur FR/EN, menu mobile, animations, formulaire
-├── assets/avatar.svg # Avatar (remplaçable par photo.jpg / captures de projets)
+├── assets/avatar.svg
 ├── robots.txt
 └── README.md
 ```

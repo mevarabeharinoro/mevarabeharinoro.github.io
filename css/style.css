@@ -1,0 +1,376 @@
+/* ---------- Variables & reset ---------- */
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666;
+  --card: #f5f5f7;
+  --accent: #3b82f6;
+  --border: #e5e5e5;
+}
+
+body.dark {
+  --bg: #0f1115;
+  --text: #f2f2f2;
+  --muted: #a1a1aa;
+  --card: #1a1d24;
+  --accent: #60a5fa;
+  --border: #2a2d36;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
+
+.navbar nav { display: flex; gap: 1.5rem; align-items: center; }
+
+.navbar nav a { color: var(--text); text-decoration: none; font-size: 0.95rem; }
+.navbar nav a:hover { color: var(--accent); }
+
+#theme-toggle {
+  background: none; border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.3rem 0.6rem; cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+.hero h1 span { color: var(--accent); }
+.tagline { color: var(--muted); font-size: 1.15rem; margin-bottom: 2rem; }
+
+.cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, opacity 0.2s;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--accent); color: #fff; }
+.btn.ghost { border: 1px solid var(--border); color: var(--text); background: transparent; }
+
+/* ---------- Sections ---------- */
+.section { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.section h2 { font-size: 1.9rem; margin-bottom: 2rem; }
+.section h3 { margin: 1.5rem 0 0.75rem; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+.skills li {
+  background: var(--card); padding: 0.4rem 0.9rem;
+  border-radius: 999px; font-size: 0.9rem;
+}
+
+/* ---------- Filtres ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+
+.filter-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ---------- Grille de projets ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+
+.card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+
+.card-body { padding: 1.2rem; }
+.card-body h3 { margin-bottom: 0.4rem; font-size: 1.1rem; }
+.card-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.8rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.9rem; }
+.tag {
+  background: var(--bg); border: 1px solid var(--border);
+  padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.75rem;
+}
+
+.card-links { display: flex; gap: 1rem; }
+.card-links a { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+.card-links a:hover { text-decoration: underline; }
+
+/* ---------- Formulaire ---------- */
+#contact-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 500px; margin-bottom: 1.5rem; }
+
+#contact-form input, #contact-form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+  outline: none; border-color: var(--accent);
+}
+
+.form-status { font-size: 0.9rem; color: var(--accent); min-height: 1.2em; }
+
+.socials { display: flex; gap: 1.5rem; }
+.socials a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.socials a:hover { text-decoration: underline; }
+
+/* ---------- Footer ---------- */
+footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
+
+/* ---------- Animations ---------- */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.loading, .error { color: var(--muted); text-align: center; grid-column: 1 / -1; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .navbar { padding: 1rem; }
+  .navbar nav { gap: 1rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .section { padding: 3rem 1.2rem; }
+}
+
+.avatar {
+  /* 1. Dimensions de l'avatar */
+  width: 120px;
+  height: 120px;
+  
+  /* 2. Transformation en cercle parfait */
+  border-radius: 50%;
+  
+  /* 3. Recadrage intelligent de la photo (le visage reste centré) */
+  object-fit: cover;
+  object-position: center 20%; /* Ajuste pour garder le visage bien centré */
+  
+  /* 4. Finitions esthétiques */
+  border: 3px solid #3b82f6; /* Bordure bleue (couleur d'accent du portfolio) */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Légère ombre portée */
+  background-color: #f5f5f7; /* Fond de secours si l'image met du temps à charger */
+  
+  /* 5. Bonus : animation au survol (optionnel) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Évite les espaces vides sous l'image */
+}
+
+/* Effet au survol (optionnel) */
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Conteneur de l'avatar --- */
+.css-avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #e2e8f0; /* Fond gris clair type photo d'identité */
+  border-radius: 12px; /* Coins légèrement arrondis */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* --- Épaules / Vêtements (Veste noire) --- */
+.css-avatar .shoulders {
+  position: absolute;
+  bottom: -20px;
+  width: 160px;
+  height: 80px;
+  background-color: #1a1a1a; /* Veste noire */
+  border-radius: 50% 50% 0 0;
+  z-index: 1;
+}
+
+/* --- Col blanc de la chemise --- */
+.css-avatar .collar {
+  position: absolute;
+  bottom: -10px;
+  width: 40px;
+  height: 30px;
+  background-color: #ffffff; /* Chemise blanche */
+  border-radius: 50% 50% 0 0;
+  z-index: 2;
+}
+
+/* --- Cou --- */
+.css-avatar .neck {
+  position: absolute;
+  bottom: 50px;
+  width: 50px;
+  height: 40px;
+  background-color: #b97a56; /* Couleur de peau (ombre) */
+  z-index: 2;
+}
+
+/* --- Tête / Visage --- */
+.css-avatar .face {
+  position: absolute;
+  bottom: 70px;
+  width: 100px;
+  height: 120px;
+  background-color: #d19a76; /* Couleur de peau principale */
+  border-radius: 45% 45% 50% 50% / 40% 40% 60% 60%; /* Forme de visage ovale */
+  z-index: 3;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.1); /* Légère ombre pour le volume */
+}
+
+/* --- Cheveux (Arrière) --- */
+.css-avatar .hair-back {
+  position: absolute;
+  bottom: 160px;
+  width: 110px;
+  height: 100px;
+  background-color: #2b1d18; /* Brun très foncé */
+  border-radius: 50% 50% 20% 20%;
+  z-index: 2;
+}
+
+/* --- Cheveux (Front / Ligne de cheveux) --- */
+.css-avatar .hair-front {
+  position: absolute;
+  bottom: 170px;
+  width: 100px;
+  height: 40px;
+  background-color: #2b1d18;
+  border-radius: 50% 50% 20% 20%;
+  z-index: 4;
+  /* Effet de petits cheveux naturels */
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 85% 80%, 75% 100%, 65% 85%, 55% 100%, 45% 85%, 35% 100%, 25% 85%, 15% 100%, 5% 80%);
+}
+
+/* --- Oreilles --- */
+.css-avatar .ear {
+  position: absolute;
+  bottom: 100px;
+  width: 15px;
+  height: 25px;
+  background-color: #b97a56;
+  border-radius: 50%;
+  z-index: 2;
+}
+.css-avatar .ear.left { left: 40px; }
+.css-avatar .ear.right { right: 40px; }
+
+/* --- Yeux --- */
+.css-avatar .eye {
+  position: absolute;
+  bottom: 125px;
+  width: 12px;
+  height: 12px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  z-index: 5;
+}
+.css-avatar .eye.left { left: 60px; }
+.css-avatar .eye.right { right: 60px; }
+
+/* Reflet dans les yeux */
+.css-avatar .eye::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* --- Sourcils --- */
+.css-avatar .eyebrow {
+  position: absolute;
+  bottom: 142px;
+  width: 20px;
+  height: 4px;
+  background-color: #2b1d18;
+  border-radius: 4px;
+  z-index: 5;
+}
+.css-avatar .eyebrow.left { left: 56px; transform: rotate(-5deg); }
+.css-avatar .eyebrow.right { right: 56px; transform: rotate(5deg); }
+
+/* --- Nez --- */
+.css-avatar .nose {
+  position: absolute;
+  bottom: 105px;
+  width: 12px;
+  height: 15px;
+  background-color: #b97a56; /* Ombre du nez */
+  border-radius: 50%;
+  z-index: 5;
+}
+
+/* --- Bouche / Lèvres --- */
+.css-avatar .mouth {
+  position: absolute;
+  bottom: 85px;
+  width: 30px;
+  height: 12px;
+  background-color: #c56c6c; /* Lèvres rosées */
+  border-radius: 0 0 50% 50%;
+  z-index: 5;
+}

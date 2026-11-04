@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "KotBus",
+    "description": "Application mobile + web alimentée surtout par les signalements des usagers.",
+    "technologies": ["Ionic", "Capacitor", "PostgreSQL", "Angular"],
+    "image": "assets/KotBus.png",
+    "demo": "https://demo.example.com",
+    "repo": "https://github.com/mevarabeharinoro/"
+  },
+  {
+    "id": 2,
+    "title": "Micro-Besoins",
+    "description": "Une plateforme d'échange de besoins entre usagers.",
+    "technologies": ["Figma", "Mobile", "Web", "Typescript"],
+    "image": "assets/Micro-besoins1.png",
+    "demo": "https://demo.example.com",
+    "repo": "https://github.com/micro-besoins/micro-besoins-app.git"
+  },
+  {
+    "id": 3,
+    "title": "Plastic Patrol",
+    "description": "Un jeu 2D qui rend la préservation des fonds marins motivante.",
+    "technologies": ["Jeu 2D", "Game design", "C#"],
+    "image": "assets/Plastic Patrol.jpg",
+    "demo": "https://demo.example.com",
+    "repo": "https://github.com/mevarabeharinoro/"
+  },
+  {
+    "id": 4,
+    "title": "HomeAlone",
+    "description": "Une application à 2 utilisateurs : portefeuille, courses, tâches et calendrier.",
+    "technologies": ["Full-stack", "Multi-utilisateurs"],
+    "image": "assets/project3.png",
+    "demo": "https://demo.example.com",
+    "repo": "https://github.com/mevarabeharinoro/"
+  }, 
+  {
+    "id": 5,
+    "title": "MazePathFinding",
+    "description": "Une application pour trouver le chemin le plus court via les algorithmes de théorie des graphes.",
+    "technologies": ["Java"],
+    "image": "assets/project3.png",
+    "demo": "https://demo.example.com",
+    "repo": "https://github.com/MazePathfinding/MazePathfinding.git"
+  }
+]

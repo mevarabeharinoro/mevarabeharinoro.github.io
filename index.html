@@ -3,104 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meva Rabe Harinoro | Développeuse full-stack / mobile</title>
-<meta name="description" content="Portfolio de Meva, ex-urbaniste devenue développeuse full-stack/mobile : KotBus, Micro-Besoins, Plastic Patrol, HomeAlone.">
-<meta property="og:title" content="Meva | Applications pour se déplacer et s'organiser">
+<title>Meva Rabe Harinoro | Portfolio développeuse full-stack / mobile</title>
+<meta name="description" content="Portfolio 3D de Meva, ex-urbaniste devenue développeuse full-stack/mobile : KotBus, Micro-Besoins, Plastic Patrol, HomeAlone.">
+<meta property="og:title" content="Meva | Traversez la ville, découvrez mes projets">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://mevarabeharinoro.github.io/">
 <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0B1F3A">
+<meta name="theme-color" content="#070707">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Meva Rabe Harinoro","jobTitle":"Développeuse full-stack / mobile","email":"mevarabeharinoro@gmail.com","sameAs":["https://www.linkedin.com/in/meva-rabe-harinoro/","https://github.com/mevarabeharinoro"]}</script>
 </head>
 <body>
 <button id="lang" aria-label="Changer de langue">EN</button>
-<!-- LIGNE DE BUS : un arrêt par section -->
-<nav aria-label="Navigation"><ul>
- <li><a href="#top" class="on"><span data-i="n_home">Accueil</span></a></li>
- <li><a href="#projets"><span data-i="n_proj">Projets</span></a></li>
- <li><a href="#parcours"><span data-i="n_path">Parcours</span></a></li>
- <li><a href="#contact"><span data-i="n_contact">Contact</span></a></li>
-</ul></nav>
+<nav id="nav" aria-label="Zones"></nav>
+<div id="hud" aria-hidden="true"></div>
+<div id="hint" data-i="hint">SCROLL ↓</div>
 
-<main>
-<section id="top"><div class="wrap hero">
- <div>
-  <p class="eyebrow" data-i="eyebrow">LIGNE 01 · DÉVELOPPEUSE FULL-STACK / MOBILE EN FORMATION</p>
-  <h1 data-i="h1">Je construis des applications qui aident les gens à se déplacer et à s'organiser.</h1>
-  <p class="lead" data-i="lead">Ex-étudiante en urbanisme, aujourd'hui en Licence d'Informatique Appliquée. Je conçois le logiciel comme on conçoit un réseau : pour de vrais usagers.</p>
-  <a class="btn" href="#projets" data-i="cta">Voir les études de cas</a>
- </div>
- <!-- Remplacez par votre photo si vous préférez : assets/photo.jpg -->
- <img src="assets/avatar.svg" alt="Avatar illustré de Meva" width="300" height="300">
-</div></section>
+<!-- Les panneaux sont du vrai HTML : lisibles, indexables, et empilés sans la 3D -->
+<div id="stage"><div id="world">
+ <section class="panel" id="top">
+  <p class="lbl" data-i="s0">PORTFOLIO / 2026</p>
+  <div class="id"><img src="assets/avatar.svg" alt="Avatar de Meva" width="110" height="110">
+  <div><h1 data-i="h1">Meva <span>Rabe Harinoro</span></h1>
+  <p class="role" data-i="role">Développeuse full-stack / mobile en formation</p></div></div>
+  <p data-i="hook" style="margin-top:1rem">Je construis des applications utiles, avec un regard d'urbaniste. Scrollez pour traverser la ville.</p>
+ </section>
 
-<!-- PROJETS : chaque carte est une étude de cas (TODO : vérifier textes, technos et liens) -->
-<section id="projets"><div class="wrap">
- <h2><small>Arrêt 02</small><span data-i="h_proj">Projets en études de cas</span></h2>
- <div class="cases">
-  <article class="case rv"><div class="num">01</div><div>
-   <h3>KotBus</h3>
-   <dl><dt data-i="pb">Problème</dt><dd data-i="k1p">Difficile de savoir quels bus existent, où ils sont et quand ils arrivent.</dd>
-   <dt data-i="so">Solution</dt><dd data-i="k1s">Application mobile + web alimentée surtout par les signalements des usagers.</dd></dl>
-   <span class="tag">Ionic</span><span class="tag">Capacitor</span><span class="tag">PostgreSQL</span><br>
-   <a href="https://github.com/mevarabeharinoro" data-i="view">Voir sur GitHub →</a></div></article>
-  <article class="case rv"><div class="num">02</div><div>
-   <h3>Micro-Besoins</h3>
-   <dl><dt data-i="pb">Problème</dt><dd data-i="k2p">Des besoins du quotidien restent souvent sans réponse.</dd>
-   <dt data-i="so">Solution</dt><dd data-i="k2s">Une plateforme d'échange de besoins entre usagers.</dd></dl>
-   <span class="tag">Figma</span><span class="tag">Mobile</span><span class="tag">Web</span><br>
-   <a href="https://github.com/mevarabeharinoro" data-i="view">Voir sur GitHub →</a></div></article>
-  <article class="case rv"><div class="num">03</div><div>
-   <h3>Plastic Patrol</h3>
-   <dl><dt data-i="pb">Problème</dt><dd data-i="k3p">Les jeunes sont difficiles à mobiliser pour la protection des océans.</dd>
-   <dt data-i="so">Solution</dt><dd data-i="k3s">Un jeu 2D qui rend la préservation des fonds marins motivante.</dd></dl>
-   <span class="tag">Jeu 2D</span><span class="tag">Game design</span><br>
-   <a href="https://github.com/mevarabeharinoro" data-i="view">Voir sur GitHub →</a></div></article>
-  <article class="case rv"><div class="num">04</div><div>
-   <h3>HomeAlone</h3>
-   <dl><dt data-i="pb">Problème</dt><dd data-i="k4p">Gérer une maison à deux, entre budget, courses, tâches et agenda.</dd>
-   <dt data-i="so">Solution</dt><dd data-i="k4s">Une application à 2 utilisateurs : portefeuille, courses, tâches et calendrier.</dd></dl>
-   <span class="tag">Full-stack</span><span class="tag">Multi-utilisateurs</span><br>
-   <a href="https://github.com/mevarabeharinoro" data-i="view">Voir sur GitHub →</a></div></article>
- </div>
-</div></section>
+ <section class="panel" id="rewind">
+  <p class="lbl" data-i="rw1">Là où tout commence</p>
+  <h2><em data-i="rw">Let's rewind</em></h2>
+  <!-- TODO : ajoutez 1 ou 2 touches personnelles (passions, valeurs) -->
+  <p data-i="rwt">Basée à Maurice, avec des racines à Madagascar, bilingue. Curieuse de nature, j'aime transformer une idée en prototype qui sert vraiment.</p>
+ </section>
 
-<!-- PARCOURS : à propos + urbanisme + IA réunis en une seule histoire -->
-<section id="parcours"><div class="wrap">
- <h2><small>Arrêt 03</small><span data-i="h_path">D'urbaniste à développeuse</span></h2>
- <div class="blocks">
-  <div class="blk rv"><h3 data-i="b1">Mon parcours</h3><p data-i="b1t">J'ai commencé par le génie civil et l'urbanisme, puis je suis passée à l'informatique. Je suis en 3e année de Licence en Informatique Appliquée (Université des Mascareignes), avec l'objectif du développement full-stack et mobile.</p></div>
-  <div class="blk rv"><h3 data-i="b2">Mémoire d'urbanisme</h3><p data-i="b2t">Amélioration de la fluidité de la circulation entre Antananarivo et ses périphéries : le cas d'Itaosy. C'est pour ça que je pense mobilité d'abord, code ensuite.</p></div>
-  <div class="blk wide rv"><h3 data-i="b3">Compétences et outils</h3>
-   <p data-i="b3t">Logiciel et design</p>
-   <span class="tag">Angular</span><span class="tag">React</span><span class="tag">Ionic</span><span class="tag">Capacitor</span><span class="tag">PostgreSQL</span><span class="tag">Java</span><span class="tag">MATLAB</span><span class="tag">Figma</span><span class="tag">Vitest</span><span class="tag">Playwright</span>
-   <p data-i="b3u" style="margin-top:.8rem">Urbanisme, SIG et CAO</p>
-   <span class="tag">ArcGIS</span><span class="tag">QGIS</span><span class="tag">AutoCAD</span><span class="tag">ArchiCAD</span><span class="tag">Revit</span><span class="tag">SketchUp</span></div>
-  <div class="blk wide rv" style="background:#fff;color:var(--navy)"><h3 data-i="b4">L'IA comme copilote</h3><p data-i="b4t">J'utilise l'IA pour explorer des idées, générer des squelettes de code, déboguer et écrire des tests, puis je relis et adapte tout. Résultat : des prototypes plus rapides, un apprentissage accéléré et plus de temps pour les vrais besoins des utilisateurs.</p></div>
- </div>
-</div></section>
+ <section class="panel big" id="rethink">
+  <p class="lbl" data-i="rt1">Études, projets et stage</p>
+  <h2><em data-i="rt">Let's rethink</em></h2>
+  <p data-i="rtt">Licence en Informatique Appliquée en 3e année (Université des Mascareignes), vice-major de ma promotion. Stage terminé avec succès dans une entreprise qui travaille en Scrum. Outils : PHP, HTML, CSS, Java, GitHub, Jira, Angular, React, Ionic.</p>
+  <!-- TODO : vérifiez les textes et ajoutez les liens GitHub/démo de chaque projet -->
+  <div class="mini">
+   <div><b>KotBus</b><span data-i="k1">Appli hybride des bus : lesquels, où, quand, alimentée par les signalements des usagers.</span></div>
+   <div><b>Micro-Besoins</b><span data-i="k2">Plateforme d'échange de besoins entre usagers.</span></div>
+   <div><b>Plastic Patrol</b><span data-i="k3">Jeu 2D qui motive les jeunes à préserver les fonds marins.</span></div>
+   <div><b>HomeAlone</b><span data-i="k4">Gestion d'une maison à deux : portefeuille, courses, tâches, calendrier.</span></div>
+  </div>
+  <p data-i="ai" class="mono" style="font-size:.85rem;color:var(--amb)">L'IA est mon copilote de code : idées, squelettes, débogage, tests. Je relis et adapte toujours.</p>
+ </section>
 
-<section id="contact"><div class="wrap">
- <h2><small>Terminus</small><span data-i="h_contact">Contact</span></h2>
- <div class="two">
+ <section class="panel" id="rebuild">
+  <p class="lbl" data-i="rb1">Avant le code : les villes</p>
+  <h2><em data-i="rb">Let's rebuild</em></h2>
+  <p data-i="rbt">J'ai commencé par le génie civil et l'urbanisme. Mon mémoire portait sur la fluidité de la circulation entre Antananarivo et ses périphéries : le cas d'Itaosy. Hier j'optimisais la façon dont une ville circule, aujourd'hui j'optimise l'expérience des utilisateurs d'une application.</p>
+  <p style="margin:.8rem 0 .3rem"><span class="tag">ArcGIS</span><span class="tag">QGIS</span><span class="tag">AutoCAD</span><span class="tag">ArchiCAD</span><span class="tag">Revit</span><span class="tag">SketchUp</span></p>
+ </section>
+
+ <section class="panel" id="connect">
+  <p class="lbl" data-i="cn1">Prochain arrêt : vous</p>
+  <h2><em data-i="cn">Let's connect</em></h2>
+  <p data-i="cnt">Un projet, un stage, un poste en tête ? Parlons-en.</p>
   <!-- Remplacez VOTRE_ID par votre identifiant Formspree. Sinon : repli vers votre client mail. -->
   <form action="https://formspree.io/f/VOTRE_ID" method="POST">
    <input name="name" data-ph="f_name" placeholder="Votre nom" required aria-label="Nom">
    <input name="email" type="email" data-ph="f_mail" placeholder="Votre email" required aria-label="Email">
-   <textarea name="message" rows="5" data-ph="f_msg" placeholder="Votre message" required aria-label="Message"></textarea>
+   <textarea name="message" rows="4" data-ph="f_msg" placeholder="Votre message" required aria-label="Message"></textarea>
    <button class="btn" type="submit" data-i="send">Envoyer</button>
    <p id="status" role="status"></p>
   </form>
   <div class="links">
-   <a href="https://www.linkedin.com/in/meva-rabe-harinoro/" rel="noopener" target="_blank">→ LinkedIn</a>
-   <a href="https://github.com/mevarabeharinoro" rel="noopener" target="_blank">→ GitHub</a>
-   <a href="mailto:mevarabeharinoro@gmail.com">→ mevarabeharinoro@gmail.com</a>
+   <a href="https://www.linkedin.com/in/meva-rabe-harinoro/" rel="noopener" target="_blank">LinkedIn</a>
+   <a href="https://github.com/mevarabeharinoro" rel="noopener" target="_blank">GitHub</a>
+   <a href="mailto:mevarabeharinoro@gmail.com">mevarabeharinoro@gmail.com</a>
   </div>
- </div>
-</div></section>
-</main>
-<footer>© 2026 Meva Rabe Harinoro · <span data-i="foot">Conçu et développé par Meva</span></footer>
+ </section>
+</div></div>
 <script src="js/main.js" defer></script>
 </body>
 </html>

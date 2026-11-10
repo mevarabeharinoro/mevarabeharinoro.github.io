@@ -48,8 +48,8 @@ P.forEach((p,i)=>p.style.transform=`translate3d(${S[i].x}px,${S[i].y}px,${S[i].z
 let sd=7;const R=(a,b)=>a+((sd=(sd*16807)%2147483647)/2147483647)*(b-a);
 const gr=document.createElement("div");gr.className="ground";
 gr.style.transform=`translate3d(0,${G}px,-3400px) rotateX(90deg)`;world.append(gr);
-for(let n=0;n<70;n++){
- const x=R(-3400,3400),z=R(-7800,600),w=R(120,380),d=R(120,380),h=R(250,1700);
+for(let n=0;n<36;n++){
+ const x=R(-3400,3400),z=R(-7400,600),w=R(120,380),d=R(120,380),h=R(250,1700);
  if(S.some(s=>Math.abs(x-s.x)<650&&Math.abs(z-s.z)<650))continue;
  const b=document.createElement("div");b.className="b"+(n%9?"":" hot");
  b.style.transform=`translate3d(${x}px,${G-h/2}px,${z}px)`;
@@ -61,15 +61,22 @@ const nav=document.getElementById("nav"),hud=document.getElementById("hud");
 const max=()=>document.documentElement.scrollHeight-innerHeight;
 N.forEach((n,i)=>{const b=document.createElement("button");b.textContent=`0${i} ${n}`;
  b.onclick=()=>scrollTo({top:i/(N.length-1)*max(),behavior:"smooth"});nav.append(b)});
-// Boucle d'animation avec inertie
-let cur=0;const L=(a,b,t)=>a+(b-a)*t;
+// === Boucle d'animation : inertie + pause a chaque arret ===
+let cur=0,last=-1;
+const cl=(v,a,b)=>Math.min(b,Math.max(a,v)),L=(a,b,t)=>a+(b-a)*t;
+// Au debut et a la fin de chaque segment la camera reste immobile sur l'arret
+const hold=f=>{f=cl((f-.22)/.56,0,1);return f*f*(3-2*f)};
+addEventListener("resize",()=>last=-1);
 (function f(){
- const tgt=max()>0?scrollY/max():0;cur+=(tgt-cur)*.08;
- const t=Math.min(cur,.9999)*(N.length-1),i=Math.floor(t);let u=t-i;u=u*u*(3-2*u);
+ requestAnimationFrame(f); // replanifie d'abord : une erreur ne peut plus tuer la boucle
+ const m=max(),tgt=cl(m>0?scrollY/m:0,0,1); // cl : le rebond (overscroll) donnait un indice negatif
+ cur+=(tgt-cur)*.14;if(Math.abs(tgt-cur)<1e-5)cur=tgt;
+ if(cur===last)return;last=cur;
+ const t=cur*(N.length-1),i=Math.min(Math.floor(t),N.length-2),u=hold(t-i),e=i+u;
  const a=S[i],b=S[i+1],k=k=>L(a[k],b[k],u),off=innerWidth<700?80:300;
  world.style.transform=`rotateX(${-k("rx")}deg) rotateY(${-k("ry")}deg) translate3d(${-k("x")}px,${-k("y")}px,${-(k("z")+off)}px)`;
- P.forEach((p,j)=>{const o=Math.max(0,1-Math.abs(t-j)*1.5);p.style.opacity=o;p.style.visibility=o?"visible":"hidden";p.style.pointerEvents=o>.6?"auto":"none"});
- const c=Math.round(t);[...nav.children].forEach((e,j)=>e.classList.toggle("on",j===c));
+ P.forEach((p,j)=>{const o=Math.max(0,1-Math.abs(e-j)*1.5);p.style.opacity=o;p.style.visibility=o?"visible":"hidden";p.style.pointerEvents=o>.6?"auto":"none"});
+ const c=Math.round(e);[...nav.children].forEach((el,j)=>el.classList.toggle("on",j===c));
  hud.innerHTML=`<b>ZONE 0${c} / ${N[c]}</b><span>X ${Math.round(k("x"))} Y ${Math.round(k("y"))} Z ${Math.round(k("z"))}</span>`;
- requestAnimationFrame(f)})();
+})();
 }

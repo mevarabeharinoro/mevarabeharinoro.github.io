@@ -13,16 +13,16 @@ h2 em{color:var(--red);font-style:normal}
 .panel.big{max-width:780px}
 #hud,#nav,#hint{display:none}
 /* Mode 3D */
-.d3 body{height:560vh}
+.d3 body{height:650vh}
 .d3 #stage{position:fixed;inset:0;overflow:hidden;perspective:1000px;background:radial-gradient(ellipse at 50% 100%,#2a0200,var(--bk) 65%)}
 .d3 #world{position:absolute;left:50%;top:50%;transform-style:preserve-3d;will-change:transform}
 .d3 .panel{position:absolute;left:0;top:0;width:min(88vw,560px);margin:0;box-shadow:0 0 50px #e1060040,inset 0 0 40px #e106001a;transition:opacity .2s}
 .d3 .panel.big{width:min(92vw,760px)}
 .d3 #hud,.d3 #nav{display:flex}
 .d3 #hint{display:block}
-.ground{position:absolute;width:12000px;height:12000px;margin:-6000px 0 0 -6000px;background-image:linear-gradient(#e1060055 2px,transparent 2px),linear-gradient(90deg,#e1060055 2px,transparent 2px);background-size:200px 200px;transform-style:flat}
+.ground{position:absolute;width:7000px;height:7000px;margin:-3500px 0 0 -3500px;background-image:linear-gradient(#e1060055 2px,transparent 2px),linear-gradient(90deg,#e1060055 2px,transparent 2px);background-size:280px 280px;transform-style:flat}
 .b{position:absolute;transform-style:preserve-3d}
-.b i{position:absolute;left:50%;top:50%;background:#0b0b0bcc;border:1px solid #e10600aa}
+.b i{position:absolute;left:50%;top:50%;background:#0b0b0b;border:1px solid #e10600aa;backface-visibility:hidden}
 .b.hot i{border-color:var(--amb)}
 /* Interface */
 #nav{position:fixed;top:1rem;left:1rem;gap:.4rem;z-index:5;flex-wrap:wrap;max-width:calc(100% - 6rem)}
